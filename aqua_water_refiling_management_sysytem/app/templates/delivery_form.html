@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Delivery{% endblock %}
+
+{% block content %}
+<h2>Add Delivery</h2>
+<form method="POST" action="{{ url_for('add_delivery') }}">
+    <div class="form-group">
+        <label for="order_ID">Order ID:</label>
+        <input type="number" class="form-control" id="order_ID" name="order_ID" required>
+    </div>
+    <div class="form-group">
+        <label for="del_date">Delivery Date:</label>
+        <input type="date" class="form-control" id="del_date" name="del_date" required>
+    </div>
+    <div class="form-group">
+        <label for="del_status">Delivery Status:</label>
+        <input type="text" class="form-control" id="del_status" name="del_status" required>
+    </div>
+    <div class="form-group">
+        <label for="delivery_personID">Delivery Person ID:</label>
+        <input type="number" class="form-control" id="delivery_personID" name="delivery_personID" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Delivery</button>
+</form>
+{% endblock %}

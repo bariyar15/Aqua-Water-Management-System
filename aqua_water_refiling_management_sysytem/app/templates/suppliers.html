@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Suppliers{% endblock %}
+
+{% block content %}
+<h2>Suppliers</h2>
+<a href="{{ url_for('add_supplier') }}" class="btn btn-success">Add Supplier</a>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Contact Number</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Supplied Product ID</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ supplier[0] }}</td>
+            <td>{{ supplier[1] }}</td>
+            <td>{{ supplier[2] }}</td>
+            <td>{{ supplier[3] }}</td>
+            <td>{{ supplier[4] }}</td>
+            <td>{{ supplier[5] }}</td>
+            <td>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
